@@ -28,4 +28,4 @@ git clone --recurse-submodules https://github.com/lvgl/lv_port_esp32.git
 
 ***6.***
 
-这个项目时LVGL 7 to ESP32,LVGL 7和8有部分函数不兼容，移植的时候需要注意！
+这个项目是LVGL 7 to ESP32,LVGL 7和8有部分函数不兼容，移植的时候需要注意！

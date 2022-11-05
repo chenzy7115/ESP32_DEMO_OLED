@@ -1,6 +1,6 @@
 /* LVGL移植
  *
- * 这个项目时LVGL 7 to ESP32,LVGL 7和8有部分函数不兼容，移植的时候需要注意.
+ * 这个项目是LVGL 7 to ESP32,LVGL 7和8有部分函数不兼容，移植的时候需要注意.
  *
  * 显示器为SSD1306 OLD
  *
@@ -164,7 +164,7 @@ static void create_demo_application(void)
     lv_obj_t * label1 =  lv_label_create(scr, NULL);
 
     /*Modify the Label's text*/
-    lv_label_set_text(label1, "Hello\nworld");
+    lv_label_set_text(label1, "Hello\nChenzy");
 
     /* Align the Label to the center
      * NULL means align on parent (which is the screen now)
