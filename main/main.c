@@ -1,12 +1,12 @@
-/* LVGL Example project
+/* LVGL移植
  *
- * Basic project to test LVGL on ESP32 based projects.
+ * 这个项目时LVGL 7 to ESP32,LVGL 7和8有部分函数不兼容，移植的时候需要注意.
  *
- * This example code is in the Public Domain (or CC0 licensed, at your option.)
+ * 显示器为SSD1306 OLD
  *
- * Unless required by applicable law or agreed to in writing, this
- * software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- * CONDITIONS OF ANY KIND, either express or implied.
+ * IIC接口，SDA：21  SCL:22
+ * 
+ * GUI显示"hello world"
  */
 #include <stdbool.h>
 #include <stdio.h>
@@ -32,7 +32,7 @@
 /*********************
  *      DEFINES
  *********************/
-#define TAG "demo"
+#define TAG "SSD1306 OLED"
 #define LV_TICK_PERIOD_MS 1
 
 /**********************
@@ -155,8 +155,6 @@ static void create_demo_application(void)
 {
     /* When using a monochrome display we only show "Hello World" centered on the
      * screen */
-#if defined CONFIG_LV_TFT_DISPLAY_MONOCHROME || \
-    defined CONFIG_LV_TFT_DISPLAY_CONTROLLER_ST7735S
 
     /* use a pretty small demo for monochrome displays */
     /* Get the current screen  */
@@ -172,21 +170,7 @@ static void create_demo_application(void)
      * NULL means align on parent (which is the screen now)
      * 0, 0 at the end means an x, y offset after alignment*/
     lv_obj_align(label1, NULL, LV_ALIGN_CENTER, 0, 0);
-#else
-    /* Otherwise we show the selected demo */
 
-    #if defined CONFIG_LV_USE_DEMO_WIDGETS
-        lv_demo_widgets();
-    #elif defined CONFIG_LV_USE_DEMO_KEYPAD_AND_ENCODER
-        lv_demo_keypad_encoder();
-    #elif defined CONFIG_LV_USE_DEMO_BENCHMARK
-        lv_demo_benchmark();
-    #elif defined CONFIG_LV_USE_DEMO_STRESS
-        lv_demo_stress();
-    #else
-        #error "No demo application selected."
-    #endif
-#endif
 }
 
 static void lv_tick_task(void *arg) {
