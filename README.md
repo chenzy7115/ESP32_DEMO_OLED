@@ -15,3 +15,5 @@ git clone --recurse-submodules https://github.com/lvgl/lv_port_esp32.git
 在ssd1306.c中第75行，手动添加#define CONFIG_LV_DISPLAY_ORIENTATION_LANDSCAPE 1，再次编译通过
 
 ***5.***将下载下来的main.c中的全部内容复制到，新建项目main.c中，编译通过。OLED正确显示demo_gui内容“HELLO, WORD"
+
+pic目录下图片显示demo
