@@ -157,7 +157,7 @@ static void create_demo_application(void)
      * screen */
 
     /* use a pretty small demo for monochrome displays */
-    /* Get the current screen  */
+    /* Get the current screen 函数是指获取指定的屏幕 */
     lv_obj_t * scr = lv_disp_get_scr_act(NULL);
 
     /*Create a Label on the currently active screen*/
